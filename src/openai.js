@@ -1,8 +1,10 @@
 import openailib from "openai";
 import fs from 'fs'
 import path from "path";
+import config from 'config'
 
-const openaiconst = new openailib({apiKey: "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"});
+const openaiKey = config.get('OPENAI_KEY')
+const openaiconst = new openailib({apiKey: openaiKey});
 
 class OpenAI {
   roles = {
